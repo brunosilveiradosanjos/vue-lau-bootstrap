@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'bootstrap'
-import jQuery from 'jquery'
-window.$ = window.jQuery = jQuery;
+import 'jquery'
+// import jQuery from 'jquery'
+// window.$ = window.jQuery = jQuery;
 import 'popper.js'
 import '../public/scss/app.scss'
 

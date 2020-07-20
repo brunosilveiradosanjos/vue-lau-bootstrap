@@ -1,28 +1,32 @@
 <template>
   <div id="app">
     <appNav />
+    <appHome />
+    <appSobre />
+    <appMusicas />
+    <appTrabalhos />
+    <appContato />
     <img alt="Vue logo" src="./assets/logo.png" />
   </div>
 </template>
 
 <script>
 import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Sobre from "./components/Sobre";
+import Musicas from "./components/Musicas";
+import Trabalhos from "./components/Trabalhos";
+import Contato from "./components/Contato";
 
 export default {
   name: "App",
   components: {
-    appNav: Nav
+    appNav: Nav,
+    appHome: Home,
+    appSobre: Sobre,
+    appMusicas: Musicas,
+    appTrabalhos: Trabalhos,
+    appContato: Contato
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
