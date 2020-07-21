@@ -11,6 +11,7 @@
 html {
   padding: env(safe-area-inset);
   /* Navbar Smooth scroll to link*/
+  /* It works fine, but only at Chrome */
   scroll-behavior: smooth;
 }
 /*-- Prevent Horizontal Scrolling & Font Style --*/
@@ -25,9 +26,9 @@ html, body {
 /*--- Nav Scrolling Offset --*/
 .offset:before {
   content: "";
-  height: 4rem;
+  height: 3.6rem;
   display: block;
-  margin-top: -4rem;
+  margin-top: -3.6rem;
 }
 
 /*--- Extra Bootstrap Column Padding --*/
@@ -389,10 +390,10 @@ blockquote .fa-angle-down {
 /*============= CONTACT SECTION =============*/
 
 .footer {
-  background: url('../img/footer/footer.jpg') no-repeat;
+  background: url('../img/footer.jpg') no-repeat;
   background-size: cover;
   color: white;
-  /* background-color: #505962; */
+  background-color: #505962;
 }
 .row.outer {
   background-color: rgba(57, 63, 70, .85);

@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home" class="offset">
     <div class="landing">
       <div class="home-wrap">
         <div class="home-inner"></div>

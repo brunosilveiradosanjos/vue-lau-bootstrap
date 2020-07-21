@@ -3,7 +3,7 @@
   <!-- navbar-dark -->
   <nav
     id="nav"
-    class="navbar navbar-expand-md fixed-top"
+    class="navbar navbar-expand-md fixed-top offset"
     :class="{ 'solid': solid  , 'solid-toggle': solidToggle}"
     @scroll="handleScroll"
   >
@@ -30,8 +30,9 @@
         ref="navbarResponsive"
       >
         <ul class="navbar-nav ml-auto">
+          <!-- <button @click="smooth('#home')">teste</button> -->
           <li class="nav-item" v-for="(item,index) in navItens" :key="index">
-            <a :href="item.page" class="nav-link" id="navLink" ref="navLink">{{item.title}}</a>
+            <a class="nav-link" id="navLink" ref="navLink" :href="item.page">{{item.title}}</a>
           </li>
         </ul>
       </div>
@@ -52,6 +53,10 @@ export default {
     document.addEventListener("click", this.handleNavbarToggler);
   },
   methods: {
+    smooth(x) {
+      console.log(x);
+      document.querySelector(x).scrollIntoView({ behavior: "smooth" });
+    },
     // Navbar solid transition rule
     handleScroll() {
       if (window.scrollY < 300) {
