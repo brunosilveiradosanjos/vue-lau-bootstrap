@@ -90,7 +90,7 @@ button, a, a.btn,
   z-index: -1;
 }
 .home-wrap {
-  clip: rect(0, auto, auto, 0);
+  clip: rect(0, auto,auto,0);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -98,12 +98,13 @@ button, a, a.btn,
   left: 0;
 }
 .home-inner {
-  background-image: url('../img/computers.jpg');
+  background-image: url('../img/image1.jpg');
   position: fixed;
   height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center center;
+  /* solving mobile problemns */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: transform;

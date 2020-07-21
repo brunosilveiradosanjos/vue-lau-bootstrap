@@ -62,18 +62,19 @@ export default {
     },
     handleNavbarToggler(evt) {
       // Navbar solid-toggle transition rule
-      if (
-        this.$refs.toggleButton.id == "toggleButton" &&
-        window.scrollY < 300
-      ) {
-        this.solidToggle = !this.solidToggle;
+      if (evt.target.id == "toggleButton") {
+        if (this.solidToggle) {
+          setTimeout(() => {
+            this.solidToggle = !this.solidToggle;
+          }, 300);
+        } else {
+          this.solidToggle = !this.solidToggle;
+        }
       }
-
       // Navbar close menu on click
       if (evt.target.id == "navLink") {
         this.$refs.navbarResponsive.classList.remove("show");
-      } else {
-        this.show = true;
+        this.solidToggle = false;
       }
     }
   },
