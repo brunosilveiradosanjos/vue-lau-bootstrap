@@ -2,8 +2,9 @@
   <!-- bg-dark -->
   <!-- navbar-dark -->
   <nav
+    id="nav"
     class="navbar navbar-expand-md fixed-top"
-    :class="{ 'solid': solid  }"
+    :class="{ 'solid': solid  , 'solid-toggle': solidToggle}"
     @scroll="handleScroll"
   >
     <div class="container-fluid">
@@ -16,16 +17,18 @@
         type="button"
         data-toggle="collapse"
         data-target="#navbarResponsive"
-        @click="navbarToggler = !navbarToggler"
       >
-        {{
-        this.navbarToggler}}
         <span class="custom-toggler-icon">
           <i class="fas fa-bars"></i>
         </span>
       </button>
       <!-- Menu list in greater than 768px -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div
+        class="collapse navbar-collapse"
+        :class="{'show':show}"
+        id="navbarResponsive"
+        ref="navbarResponsive"
+      >
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" v-for="(item,index) in navItens" :key="index">
             <a :href="item.page" class="nav-link">{{item.title}}</a>
@@ -41,27 +44,51 @@ export default {
   // listem the scroll event
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    document.addEventListener("click", this.handleNavbarToggler);
+    document.addEventListener("click", this.handleNavbarClose);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
+    document.addEventListener("click", this.handleNavbarToggler);
+    document.addEventListener("click", this.handleNavbarClose);
   },
   methods: {
     // Navbar solid transition rule
     handleScroll() {
-      if (this.navbarToggler) {
-        this.solid = true;
-      } else if (window.scrollY < 300) {
+      // console.log(evt.target.scrollingElement.scrollTop);
+      if (window.scrollY < 300) {
         this.solid = false;
-      } else if (window.scrollY >= 300) {
+      } else {
         this.solid = true;
       }
-      console.log(window.scrollY);
+    },
+    // Navbar solid-toggle transition rule
+    handleNavbarToggler(evt) {
+      // console.log(evt.target.className);
+      if (evt.target.className == "fas fa-bars" && window.scrollY < 300) {
+        this.solidToggle = !this.solidToggle;
+      }
+      console.log("solidToggle  " + this.solidToggle);
+    },
+    // Navbar close menu on click
+    handleNavbarClose(evt) {
+      console.log(this.$refs);
+      evt.target.classList.forEach(element => {
+        if (element == "nav-link") {
+          evt.preventDefault();
+          this.$refs.navbarResponsive.classList.remove("show");
+        } else {
+          this.show = true;
+        }
+      });
     }
+    // Navbar Smooth scroll to link
   },
   data() {
     return {
       solid: false,
-      navbarToggler: false,
+      solidToggle: false,
+      show: false,
       navItens: [
         { title: "Home", page: "#home" },
         { title: "Sobre", page: "#sobre" },
