@@ -10,6 +10,8 @@
 /*-- iPhone X Remove Gutters --*/
 html {
   padding: env(safe-area-inset);
+  /* Navbar Smooth scroll to link*/
+  scroll-behavior: smooth;
 }
 /*-- Prevent Horizontal Scrolling & Font Style --*/
 html, body {

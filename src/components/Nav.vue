@@ -19,7 +19,7 @@
         data-target="#navbarResponsive"
       >
         <span class="custom-toggler-icon">
-          <i class="fas fa-bars"></i>
+          <i ref="toggleButton" id="toggleButton" class="fas fa-bars"></i>
         </span>
       </button>
       <!-- Menu list in greater than 768px -->
@@ -31,7 +31,7 @@
       >
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" v-for="(item,index) in navItens" :key="index">
-            <a :href="item.page" class="nav-link">{{item.title}}</a>
+            <a :href="item.page" class="nav-link" id="navLink" ref="navLink">{{item.title}}</a>
           </li>
         </ul>
       </div>
@@ -41,48 +41,41 @@
 
 <script>
 export default {
-  // listem the scroll event
   created() {
+    // listem scroll event
     window.addEventListener("scroll", this.handleScroll);
+    // listem click event
     document.addEventListener("click", this.handleNavbarToggler);
-    document.addEventListener("click", this.handleNavbarClose);
   },
   destroyed() {
     window.addEventListener("scroll", this.handleScroll);
     document.addEventListener("click", this.handleNavbarToggler);
-    document.addEventListener("click", this.handleNavbarClose);
   },
   methods: {
     // Navbar solid transition rule
     handleScroll() {
-      // console.log(evt.target.scrollingElement.scrollTop);
       if (window.scrollY < 300) {
         this.solid = false;
       } else {
         this.solid = true;
       }
     },
-    // Navbar solid-toggle transition rule
     handleNavbarToggler(evt) {
-      // console.log(evt.target.className);
-      if (evt.target.className == "fas fa-bars" && window.scrollY < 300) {
+      // Navbar solid-toggle transition rule
+      if (
+        this.$refs.toggleButton.id == "toggleButton" &&
+        window.scrollY < 300
+      ) {
         this.solidToggle = !this.solidToggle;
       }
-      console.log("solidToggle  " + this.solidToggle);
-    },
-    // Navbar close menu on click
-    handleNavbarClose(evt) {
-      console.log(this.$refs);
-      evt.target.classList.forEach(element => {
-        if (element == "nav-link") {
-          evt.preventDefault();
-          this.$refs.navbarResponsive.classList.remove("show");
-        } else {
-          this.show = true;
-        }
-      });
+
+      // Navbar close menu on click
+      if (evt.target.id == "navLink") {
+        this.$refs.navbarResponsive.classList.remove("show");
+      } else {
+        this.show = true;
+      }
     }
-    // Navbar Smooth scroll to link
   },
   data() {
     return {
