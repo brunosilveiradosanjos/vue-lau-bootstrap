@@ -12,8 +12,7 @@
                   Será um prazer te ajudar a realizar o sonho de tocar um
                   instrumento e aprender teoria e história da música,
                   seja por lazer ou profissionalmente. Para isso deixe uma mensagem
-                  e minha equipe entrará em contato para havaliarmos as condições das
-                  das aulas.
+                  e minha equipe entrará em contato.
                 </p>
                 <strong>Localização</strong>
                 <p>Osasco</p>

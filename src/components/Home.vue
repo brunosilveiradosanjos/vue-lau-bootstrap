@@ -6,16 +6,16 @@
       </div>
     </div>
     <div class="caption text-center text-light text-uppercase">
-      <h1 class="font-weight-bold animate__animated animate__bounceInUp animate__delay-1s">
+      <h1 class="font-weight-bold animate__animated animate__fadeInUp animate__delay-1s">
         Lau Marques
         <span class="text-nuno">Anjos</span>
       </h1>
       <h4
-        class="animate__animated animate__bounceInUp animate__delay-2s"
+        class="animate__animated animate__fadeInUp animate__delay-2s"
       >Professor, arranjador e instrumentista</h4>
       <a
         href="#contato"
-        class="btn btn-outline-light btn-lg animate__animated animate__bounceInUp animate__delay-3s"
+        class="btn btn-outline-light btn-lg animate__animated animate__fadeInUp animate__delay-3s"
       >Contato</a>
     </div>
     <a href="#sobre" class="down-arrow text-center" @scroll="handleScroll">
