@@ -4,7 +4,7 @@
     <appHome />
     <appSobre />
     <appMusicas />
-    <appTrabalhos />
+    <appBanda />
     <appContato />
   </div>
 </template>
@@ -14,7 +14,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Sobre from "./components/Sobre";
 import Musicas from "./components/Musicas";
-import Trabalhos from "./components/Trabalhos";
+import Banda from "./components/Banda";
 import Contato from "./components/Contato";
 
 export default {
@@ -24,7 +24,7 @@ export default {
     appHome: Home,
     appSobre: Sobre,
     appMusicas: Musicas,
-    appTrabalhos: Trabalhos,
+    appBanda: Banda,
     appContato: Contato
   }
 };

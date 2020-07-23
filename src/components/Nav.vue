@@ -92,7 +92,7 @@ export default {
         { title: "Home", page: "#home" },
         { title: "Sobre", page: "#sobre" },
         { title: "Músicas", page: "#musicas" },
-        { title: "Trabalhos", page: "#trabalhos" },
+        { title: "Banda", page: "#banda" },
         { title: "Contato", page: "#contato" }
       ]
     };

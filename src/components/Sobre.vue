@@ -14,7 +14,7 @@
               <img src="@/../public/img/image2.jpg" />
             </div>
             <!-- text -->
-            <div class="col-lg-7">
+            <div class="col-lg-7 my-auto">
               <blockquote class="text-justify">{{text}}</blockquote>
             </div>
           </div>
@@ -45,11 +45,7 @@ export default {
   margin: 0 auto;
   display: block;
 }
-
 .sobre img:hover {
   transform: scale(0.95);
-}
-.sobre-hr {
-  border-top: 0.1rem solid #1ebba3;
 }
 </style>

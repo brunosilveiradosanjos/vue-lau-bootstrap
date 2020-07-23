@@ -7,7 +7,7 @@
     </div>
     <div class="caption text-center text-light text-uppercase">
       <h1 class="font-weight-bold animate__animated animate__fadeInUp animate__delay-1s">
-        Lau Marques
+        Marques
         <span class="text-nuno">Anjos</span>
       </h1>
       <h4

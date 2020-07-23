@@ -35,7 +35,6 @@
                   </li>
                 </ul>
               </div>
-              <!-- :style="{'color':iconHover}" -->
               <!-- Contato -->
               <div class="col-md-7 px-0 pl-md-3">
                 <h3>Contato</h3>
@@ -85,7 +84,7 @@
             <!-- end row  -->
           </div>
           <!-- end container -->
-          <hr class="socket" />&copy;Nuno Theme
+          <hr class="socket" />&copy;Marques Anjos
         </div>
         <!-- end row outer  -->
       </div>
@@ -112,7 +111,6 @@ export default {
   },
   methods: {
     handleHoverOff(index) {
-      console.log(index);
       this.$refs[index][0].style.color = "#fff";
     },
     handleHoverOn(color, index) {
