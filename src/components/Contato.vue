@@ -84,7 +84,8 @@
             <!-- end row  -->
           </div>
           <!-- end container -->
-          <hr class="socket" />&copy;Marques Anjos
+          <hr class="socket" />
+          {{ new Date().getFullYear() }} — &copy;Marques Anjos
         </div>
         <!-- end row outer  -->
       </div>
@@ -125,7 +126,7 @@ export default {
     },
     submit() {
       console.log("submit");
-    }
+    },
   },
   data() {
     return {
@@ -133,33 +134,33 @@ export default {
       iconHover: "FFFF",
       media: [
         {
-          icon: "fab fa-instagram-square",
+          icon: "fab fa-instagram",
           link: "https://www.instagram.com/lau_marques_anjos/",
-          color: "#8a3ab9"
+          color: "#8a3ab9",
         },
         {
           icon: "fa fa-facebook-official",
           link: "https://www.facebook.com/laudisvan.marques",
-          color: "#3b5998"
+          color: "#3b5998",
         },
         {
           icon: "fa fa-youtube-play",
           link: "https://www.youtube.com/channel/UCzv_NsMinL7ih8x9oub1zqg",
-          color: "#c4302b"
+          color: "#c4302b",
         },
         {
           icon: "fa fa-linkedin",
           link: "https://www.linkedin.com/in/laudisvan-anjos-78467524/",
-          color: "#0e76a8"
+          color: "#0e76a8",
         },
         {
           icon: "fab fa-spotify",
           link:
             "https://open.spotify.com/artist/2YxGOxtuuIiq5EgXVSHjMX?si=SUtbYAJTSyCV_mtPO6DT2g",
-          color: "#81b71a"
-        }
-      ]
+          color: "#81b71a",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
