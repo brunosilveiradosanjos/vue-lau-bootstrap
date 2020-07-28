@@ -81,7 +81,7 @@ export default {
         this.$refs.navbarResponsive.classList.remove("show");
         this.solidToggle = false;
       }
-    }
+    },
   },
   data() {
     return {
@@ -92,10 +92,10 @@ export default {
         { title: "Home", page: "#home" },
         { title: "Sobre", page: "#sobre" },
         { title: "Músicas", page: "#musicas" },
-        { title: "Banda", page: "#banda" },
-        { title: "Contato", page: "#contato" }
-      ]
+        { title: "Fotos", page: "#fotos" },
+        { title: "Contato", page: "#contato" },
+      ],
     };
-  }
+  },
 };
 </script>

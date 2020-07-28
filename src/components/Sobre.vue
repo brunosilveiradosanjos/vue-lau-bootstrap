@@ -1,6 +1,6 @@
 <template>
-  <div id="sobre" class="offset jumbotron mb-0">
-    <div class="m-0">
+  <div id="sobre" class="offset">
+    <div class="m-5">
       <div class="row">
         <!-- Sobre -->
         <div class="col-12 animate__animated animate__fadeInUp">

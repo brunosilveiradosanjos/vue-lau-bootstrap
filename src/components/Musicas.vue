@@ -1,5 +1,5 @@
 <template>
-  <div id="musicas">
+  <div id="musicas" class="offset">
     <!-- Start Fixed BG IMG Dark -->
     <div class="fixed">
       <div class="row dark text-light text-center">

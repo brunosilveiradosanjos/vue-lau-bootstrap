@@ -4,7 +4,7 @@
     <appHome />
     <appSobre />
     <appMusicas />
-    <appBanda />
+    <appFotos />
     <appContato />
   </div>
 </template>
@@ -14,7 +14,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Sobre from "./components/Sobre";
 import Musicas from "./components/Musicas";
-import Banda from "./components/Banda";
+// import Fotos from "./components/Fotos";
 import Contato from "./components/Contato";
 
 export default {
@@ -24,8 +24,8 @@ export default {
     appHome: Home,
     appSobre: Sobre,
     appMusicas: Musicas,
-    appBanda: Banda,
-    appContato: Contato
-  }
+    // appFotos: Fotos,
+    appContato: Contato,
+  },
 };
 </script>
