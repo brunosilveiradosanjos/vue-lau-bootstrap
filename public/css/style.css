@@ -148,7 +148,9 @@ button, a, a.btn,
 .animate__delay-3s {
   --animate-delay: 0.4s;
 }
-
+.animate__delay-4s {
+  --animate-delay: 0.5s;
+}
 /* #headerH4 {
   --animate-duration: 1.5s;
 } */

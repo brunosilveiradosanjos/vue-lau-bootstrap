@@ -3,18 +3,18 @@
     <div class="m-5">
       <div class="row">
         <!-- Sobre -->
-        <div class="col-12 animate__animated animate__fadeInUp">
+        <div id="activeTest" class="col-12 sobreTitleAnimation">
           <h3 class="heading">Sobre Mim</h3>
           <div class="heading-underline"></div>
         </div>
         <div class="col-12 px-xl-5">
           <div class="row sobre px-3 px-md-4">
             <!-- image -->
-            <div class="col-lg-5 my-auto">
+            <div class="col-lg-5 my-auto sobreImgAnimation">
               <img src="@/../public/img/image2.jpg" />
             </div>
             <!-- text -->
-            <div class="col-lg-7 my-auto">
+            <div class="col-lg-7 my-auto sobreTxtAnimation">
               <blockquote class="text-justify">{{text}}</blockquote>
             </div>
           </div>

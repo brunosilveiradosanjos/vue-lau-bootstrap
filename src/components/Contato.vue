@@ -6,7 +6,7 @@
         <div class="row outer">
           <div class="container">
             <div class="row py-3">
-              <div class="col-md-5 px-0 pr-md-3">
+              <div class="col-md-5 px-0 pr-md-3 contatoTxt1Animation">
                 <img src="../assets/logo.png" />
                 <p>
                   Será um prazer te ajudar a realizar o sonho de tocar um
@@ -36,7 +36,7 @@
                 </ul>
               </div>
               <!-- Contato -->
-              <div class="col-md-7 px-0 pl-md-3">
+              <div class="col-md-7 px-0 pl-md-3 contatoTxt2Animation">
                 <h3>Contato</h3>
                 <form id="contact-form">
                   <div class="messages"></div>

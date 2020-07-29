@@ -3,17 +3,12 @@
     <!-- Start Fixed BG IMG Dark -->
     <div class="fixed">
       <div class="row dark text-light text-center">
-        <div class="col-12 animate__animated animate__fadeInUp">
+        <div class="col-12 musicasTitleAnimation">
           <h3 class="heading">Músicas</h3>
           <div class="heading-underline"></div>
         </div>
 
-        <div
-          v-for="(info,index) in data"
-          :key="index"
-          class="col-md-4 animate__animated"
-          :class="info.fade"
-        >
+        <div v-for="(info,index) in data" :key="index" class="col-md-4" :class="info.fade">
           <h3>{{info.name}}</h3>
           <div class="feature py-2">
             <a :href="info.link" target="_blank" class="fa-layers fa-3x">
@@ -43,7 +38,7 @@ export default {
           icon: "fa fa-play-circle",
           link:
             "https://open.spotify.com/track/48lDbkBnI64vcvaD7GRQiZ?si=oDHV95YlR2OzQCuQAi_kdA",
-          fade: "animate__fadeInLeft",
+          fade: "musicasTxt1Animation",
           name: "Meu Baião",
           text:
             "Tem como base o Baião, ritmo nordestino difundido principalmente pelo pernambucano Luiz Gonzaga. Esta música apresenta uma variação em ritmo de choro e leva esse nome devido a influência de Lau pela música nordestina e pelo choro paulistano de grandes nomes, tais como: Adoniran Barbosa e Demônios da garoa.",
@@ -52,7 +47,7 @@ export default {
           icon: "fa fa-play",
           link:
             "https://open.spotify.com/track/6TB1ZyyYKGqKnqy5NLROXa?si=3W59YDVzRaKPnnbbiW_aGg",
-          fade: "animate__fadeInUp",
+          fade: "musicasTxt2Animation",
           name: "Azulão",
           text:
             'Tema composto pelo seu amigo Tustão Cunha. Inicialmente seria no ritmo de Capoeira, mas ao tocá-lo Lau sentiu o ritmo parecido com o da "Banda de pífano de Caruaru", que trabalha somente com percussão e pífanos, de sonoridade muito peculiar. Então, Lau montou o arranjo para duas flautas e a gravou com um pífano original de Caruaru, presente dado a ele pela sua irmã Lilian.',
@@ -61,7 +56,7 @@ export default {
           icon: "fa fa-play-circle-o",
           link:
             "https://open.spotify.com/track/49hGREqWJczh80xIrXcP2H?si=NzRoM9czQlOYfkqigw9KiA",
-          fade: "animate__fadeInRight",
+          fade: "musicasTxt3Animation",
           name: "Maracá-yo",
           text:
             'O início desta música tem um ritmo parecido com o Maracatu. Surgindo daí a ideia de brincar com o nome dela: Maraca-eu e Maraca-tu. Como a segunda parte da música possui uma levada latina foi batizada como Maracá-yo, que em espanhol significa "eu".',

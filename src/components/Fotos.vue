@@ -132,7 +132,7 @@ export default {
       data: [
         {
           icon: "fa fa-play-circle",
-          link: require("@/img/portfolio/8.jpg"),
+          // link: require("@/img/portfolio/8.jpg"),
           fade: "animate__fadeInLeft",
           name: "Meu Baião",
           text:
