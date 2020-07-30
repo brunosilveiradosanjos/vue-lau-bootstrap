@@ -4,7 +4,7 @@
     <appHome />
     <appSobre :active="active" />
     <appMusicas />
-    <appFotos v-if="false" />
+    <appFotos />
     <appContato />
   </div>
 </template>

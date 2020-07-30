@@ -40,8 +40,13 @@
                 <h3>Contato</h3>
                 <form id="contact-form">
                   <div class="messages"></div>
+                  <!-- <pre>{{$v.userData.name}}</pre> -->
                   <div class="controls">
-                    <div class="form-group">
+                    <!-- name  -->
+                    <div
+                      class="form-group"
+                      :class="{ 'form-group--error': $v.userData.name.$error }"
+                    >
                       <input
                         type="text"
                         id="form_name"
@@ -49,8 +54,19 @@
                         name="name"
                         required="required"
                         placeholder="Nome"
+                        v-model.trim="$v.userData.name.$model"
                       />
+                      <div class="error" v-if="$v.userData.name.error">Campo obrigatório.</div>
+                      <div
+                        class="error"
+                        v-if="!$v.userData.name.minLength"
+                      >Nome precisa ter no mínimo {{$v.userData.name.$params.minLength.min}} caracteres.</div>
+                      <div
+                        class="error"
+                        v-if="!$v.userData.name.maxLength"
+                      >Nome precisa ter no máximo {{$v.userData.name.$params.maxLength.max}} caracteres.</div>
                     </div>
+                    <!-- email -->
                     <div class="form-group">
                       <input
                         type="email"
@@ -59,8 +75,12 @@
                         name="email"
                         required="required"
                         placeholder="e-mail"
+                        v-model.trim="$v.userData.email.$model"
                       />
+                      <div class="error" v-if="!$v.userData.email.email">E-mail inválido.</div>
+                      <div class="error" v-if="$v.userData.email.error">E-mail obrigatório.</div>
                     </div>
+                    <!-- message  -->
                     <div class="form-group">
                       <textarea
                         class="form-control"
@@ -70,10 +90,19 @@
                         rows="4"
                         required="required"
                         placeholder="Deixe sua mensagem aqui"
+                        v-model.trim="$v.userData.message.$model"
                       ></textarea>
+                      <div
+                        class="error"
+                        v-if="!$v.userData.message.maxLength"
+                      >Mensagem pode ter no máximo {{$v.userData.message.$params.maxLength.max}} caracteres.</div>
                     </div>
 
-                    <button type="button" class="btn btn-outline-light" @click="submit">Enviar</button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-light"
+                      @click.prevent="submit"
+                    >Enviar</button>
                   </div>
                   <!-- end controls -->
                 </form>
@@ -103,6 +132,13 @@
 </template>
 
 <script>
+import {
+  required,
+  minLength,
+  maxLength,
+  email,
+} from "vuelidate/lib/validators";
+
 export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -125,11 +161,46 @@ export default {
       }
     },
     submit() {
-      console.log("submit");
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        this.submitStatus = "ERROR";
+      } else {
+        // do your submit logic here
+        this.submitStatus = "PENDING";
+        setTimeout(() => {
+          this.submitStatus = "OK";
+          this.$http.post(
+            "https://vuejs-http-1f05a.firebaseio.com/data.json",
+            this.userData
+          );
+          this.userData = "";
+        }, 500);
+      }
+    },
+  },
+  validations: {
+    userData: {
+      name: {
+        required,
+        minLength: minLength(8),
+        maxLength: maxLength(60),
+      },
+      email: {
+        email,
+        required,
+      },
+      message: {
+        maxLength: maxLength(200),
+      },
     },
   },
   data() {
     return {
+      userData: {
+        name: "",
+        email: "",
+        message: "",
+      },
       show: false,
       iconHover: "FFFF",
       media: [
@@ -164,3 +235,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+div.error {
+  color: #c4302b;
+  padding-top: 0.5rem;
+}
+</style>
