@@ -38,7 +38,8 @@ export default {
     handleScroll() {
       const STelement = document.querySelector(".sobreTitleAnimation");
       const mTitle = document.querySelector(".musicasTitleAnimation");
-      const cTxt1 = document.querySelector(".contatoTxt1Animation");
+      // const cTxt1 = document.querySelector(".contatoTxt1Animation");
+      const cTitle = document.querySelector(".contatoTitleAnimation");
 
       // Sobre fade class animations
       if (
@@ -108,9 +109,17 @@ export default {
 
       // Contato fade class animations
       if (
-        window.scrollY * 1.3 >
-        cTxt1.getBoundingClientRect().top + window.scrollY
+        window.scrollY * 1.5 >
+        cTitle.getBoundingClientRect().top + window.scrollY
       ) {
+        cTitle.style.setProperty("--animate-duration", "1.5s");
+        cTitle.classList.add(
+          "animate__delay-1s",
+          "animate__animated",
+          "animate__fadeInUp"
+        );
+
+        const cTxt1 = document.querySelector(".contatoTxt1Animation");
         cTxt1.style.setProperty("--animate-duration", "1.5s");
         cTxt1.classList.add(
           "animate__delay-1s",

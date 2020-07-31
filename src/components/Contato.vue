@@ -5,9 +5,15 @@
       <div class="container-fluid footer px-0">
         <div class="row outer">
           <div class="container">
+            <div class="row">
+              <div id="activeTest" class="col-12">
+                <h3 class="heading contatoTitleAnimation">
+                  <img src="../assets/logo.png" />
+                </h3>
+              </div>
+            </div>
             <div class="row py-3">
               <div class="col-md-5 px-0 pr-md-3 contatoTxt1Animation">
-                <img src="../assets/logo.png" />
                 <p>
                   Será um prazer te ajudar a realizar o sonho de tocar um
                   instrumento e aprender teoria e história da música,
@@ -240,5 +246,9 @@ export default {
 div.error {
   color: #c4302b;
   padding-top: 0.5rem;
+}
+.footer img {
+  height: 10rem;
+  margin: 0;
 }
 </style>
