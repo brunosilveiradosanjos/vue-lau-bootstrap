@@ -2,9 +2,9 @@
   <div id="app">
     <appNav />
     <appHome />
-    <appSobre :active="active" />
+    <appSobre />
     <appMusicas />
-    <appFotos />
+    <appFotos v-if="false" />
     <appContato />
   </div>
 </template>
@@ -38,7 +38,6 @@ export default {
     handleScroll() {
       const STelement = document.querySelector(".sobreTitleAnimation");
       const mTitle = document.querySelector(".musicasTitleAnimation");
-      // const cTxt1 = document.querySelector(".contatoTxt1Animation");
       const cTitle = document.querySelector(".contatoTitleAnimation");
 
       // Sobre fade class animations
@@ -46,7 +45,7 @@ export default {
         window.scrollY * 11 >
         STelement.getBoundingClientRect().top + window.scrollY
       ) {
-        STelement.style.setProperty("--animate-duration", "1.5s");
+        STelement.style.setProperty("--animate-duration", "1.0s");
         STelement.classList.add(
           "animate__delay-1s",
           "animate__animated",
@@ -54,7 +53,7 @@ export default {
         );
 
         const SIelement = document.querySelector(".sobreImgAnimation");
-        SIelement.style.setProperty("--animate-duration", "2.5s");
+        SIelement.style.setProperty("--animate-duration", "1.5s");
         SIelement.classList.add(
           "animate__delay-2s",
           "animate__animated",
@@ -62,7 +61,7 @@ export default {
         );
 
         const STxtelement = document.querySelector(".sobreTxtAnimation");
-        STxtelement.style.setProperty("--animate-duration", "3s");
+        STxtelement.style.setProperty("--animate-duration", "2s");
         STxtelement.classList.add(
           "animate__delay-3s",
           "animate__animated",
@@ -72,10 +71,10 @@ export default {
 
       // Músicas fade class animations
       if (
-        window.scrollY * 1.5 >
+        window.scrollY * 1.9 >
         mTitle.getBoundingClientRect().top + window.scrollY
       ) {
-        mTitle.style.setProperty("--animate-duration", "1.5s");
+        mTitle.style.setProperty("--animate-duration", "1.0s");
         mTitle.classList.add(
           "animate__delay-1s",
           "animate__animated",
@@ -83,7 +82,7 @@ export default {
         );
 
         const mTxt1 = document.querySelector(".musicasTxt1Animation");
-        mTxt1.style.setProperty("--animate-duration", "1.5s");
+        mTxt1.style.setProperty("--animate-duration", "1.1s");
         mTxt1.classList.add(
           "animate__delay-2s",
           "animate__animated",
@@ -91,7 +90,7 @@ export default {
         );
 
         const mTxt2 = document.querySelector(".musicasTxt2Animation");
-        mTxt2.style.setProperty("--animate-duration", "1.5s");
+        mTxt2.style.setProperty("--animate-duration", "1.1s");
         mTxt2.classList.add(
           "animate__delay-3s",
           "animate__animated",
@@ -99,7 +98,7 @@ export default {
         );
 
         const mTxt3 = document.querySelector(".musicasTxt3Animation");
-        mTxt3.style.setProperty("--animate-duration", "1.5s");
+        mTxt3.style.setProperty("--animate-duration", "1.1s");
         mTxt3.classList.add(
           "animate__delay-4s",
           "animate__animated",
@@ -112,9 +111,9 @@ export default {
         window.scrollY * 1.5 >
         cTitle.getBoundingClientRect().top + window.scrollY
       ) {
-        cTitle.style.setProperty("--animate-duration", "1.5s");
+        cTitle.style.setProperty("--animate-duration", "2.5s");
         cTitle.classList.add(
-          "animate__delay-1s",
+          "animate__delay-2s",
           "animate__animated",
           "animate__fadeInUp"
         );
@@ -122,13 +121,13 @@ export default {
         const cTxt1 = document.querySelector(".contatoTxt1Animation");
         cTxt1.style.setProperty("--animate-duration", "1.5s");
         cTxt1.classList.add(
-          "animate__delay-1s",
+          "animate__delay-2s",
           "animate__animated",
           "animate__fadeInLeft"
         );
 
         const cTxt2 = document.querySelector(".contatoTxt2Animation");
-        cTxt2.style.setProperty("--animate-duration", "2.5s");
+        cTxt2.style.setProperty("--animate-duration", "2.0s");
         cTxt2.classList.add(
           "animate__delay-2s",
           "animate__animated",

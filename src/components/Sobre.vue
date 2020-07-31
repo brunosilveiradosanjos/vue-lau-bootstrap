@@ -3,7 +3,7 @@
     <div class="m-5">
       <div class="row">
         <!-- Sobre -->
-        <div id="activeTest" class="col-12 sobreTitleAnimation">
+        <div class="col-12 sobreTitleAnimation">
           <h3 class="heading">Sobre Mim</h3>
           <div class="heading-underline"></div>
         </div>
