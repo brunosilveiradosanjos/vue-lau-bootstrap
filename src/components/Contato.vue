@@ -14,6 +14,8 @@
             </div>
             <div class="row py-3">
               <div class="col-md-5 px-0 pr-md-3 contatoTxt1Animation">
+                <!-- <p>VUE_APP_KEY_MAIL: {{VUE_APP_KEY_MAIL}}</p>
+                <p>VUE_APP_KEY_TEMPLATE: {{VUE_APP_KEY_TEMPLATE}}</p>-->
                 <p>
                   Será um prazer te ajudar a realizar o sonho de tocar um
                   instrumento e aprender teoria e história da música,
@@ -202,6 +204,8 @@ export default {
   },
   data() {
     return {
+      VUE_APP_KEY_TEMPLATE: process.env.VUE_APP_KEY_MAIL,
+      VUE_APP_KEY_MAIL: process.env.VUE_APP_KEY_MAIL,
       userData: {
         name: "",
         email: "",
